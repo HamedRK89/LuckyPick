@@ -1,0 +1,322 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 24px;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.top-stats {
+    margin-top: 8px;
+}
+
+.badge-row {
+    margin-bottom: 12px;
+}
+
+.badge {
+    background: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.star-grid {
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+}
+
+.number-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+    transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+
+.number-btn:hover {
+    transform: translateY(-1px);
+    border-color: #60a5fa;
+}
+
+.number-btn.selected {
+    background: #2563eb;
+    border-color: #60a5fa;
+    color: white;
+}
+
+.number-btn.star-selected {
+    background: #7c3aed;
+    border-color: #c084fc;
+    color: white;
+}
+
+.actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.inline-actions {
+    margin-top: 0;
+}
+
+button.action,
+button.game-card {
+    border: none;
+    border-radius: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button.action {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+button.secondary {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+.message {
+    margin-top: 14px;
+    min-height: 24px;
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.selected-box,
+.panel {
+    margin-top: 18px;
+    background: #0b1220;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.selected-list {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #93c5fd;
+}
+
+.login-wrap {
+    max-width: 420px;
+    margin: 60px auto 0;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #0b1220;
+    color: #e2e8f0;
+    font-size: 15px;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.two-col-tight {
+    align-items: start;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.player-name {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #93c5fd;
+}
+
+.small {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.game-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.game-card {
+    background: #0b1220;
+    border: 1px solid #334155;
+    color: #e2e8f0;
+    text-align: left;
+    padding: 18px;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-2px);
+    border-color: #60a5fa;
+}
+
+.game-logo {
+    width: 92px;
+    height: 92px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: 14px;
+}
+
+.lotto-logo {
+    background: #2563eb;
+    color: white;
+}
+
+.euro-logo {
+    background: #7c3aed;
+    color: white;
+}
+
+.game-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.rows-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row-item {
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.row-label {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.row-values {
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+@media (max-width: 720px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+.row-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.small-btn {
+    padding: 6px 10px !important;
+    font-size: 12px;
+}
+
+.game-logo-img {
+    width: 120px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.admin-badge {
+    background: #7c3aed;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 11px;
+    margin-left: 6px;
+}

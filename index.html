@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pick6 - Shared Lottery Picker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div id="loginPage" class="login-wrap card">
+      <h1>Pick6 Login</h1>
+      <p class="small">Log in as one of the players. After login, choose the game and save each ticket in rows.</p>
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" type="text" placeholder="Enter username" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Enter password" />
+      </div>
+
+      <button id="loginBtn" class="action">Log in</button>
+      <div id="loginMessage" class="message"></div>
+
+      <div class="panel">
+        <h3>Player accounts</h3>
+        <p class="small">Edit the usernames and passwords directly in <code>script.js</code> inside the
+          <code>players</code> array.
+        </p>
+      </div>
+    </div>
+
+    <div id="gameSelectPage" class="card hidden">
+      <div class="topbar">
+        <div>
+          <h1>Choose a Game</h1>
+          <p class="small">Logged in as <strong id="gameSelectPlayerName"></strong></p>
+        </div>
+        <div class="actions inline-actions">
+          <button class="action secondary" id="backToLoginBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="game-cards">
+        <button class="game-card" data-game="lotto">
+          <img src="assets/lotto_logo.png" class="game-logo-img" alt="Lotto logo">
+          <div class="game-title">Lotto</div>
+          <div class="small">Choose 6 numbers from 1 to 45</div>
+        </button>
+
+        <button class="game-card" data-game="euromillions">
+          <img src="assets/euro_logo.jpg" class="game-logo-img" alt="EuroMillions logo">
+          <div class="game-title">EuroMillions</div>
+          <div class="small">Choose 5 numbers from 1 to 50 and 2 stars from 1 to 12</div>
+        </button>
+      </div>
+    </div>
+
+    <div id="appPage" class="card hidden">
+      <div class="topbar">
+        <div>
+          <h1 id="pageTitle">Game Picker</h1>
+          <div class="stats top-stats">
+            <div class="badge">Logged in as: <strong id="currentPlayerName"></strong></div>
+            <div class="badge">Game: <strong id="currentGameName"></strong></div>
+          </div>
+        </div>
+        <div class="actions inline-actions">
+          <button class="action secondary" id="changeGameBtn">Change game</button>
+          <button class="action secondary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div id="lottoSection">
+        <div class="badge-row">
+          <div class="badge">Current row: <strong id="count">0</strong>/6</div>
+        </div>
+        <div id="numberGrid" class="grid"></div>
+      </div>
+
+      <div id="euromillionsSection" class="hidden">
+        <div class="two-col two-col-tight">
+          <div>
+            <div class="badge-row">
+              <div class="badge">Main numbers: <strong id="euroMainCount">0</strong>/5</div>
+            </div>
+            <div id="euroMainGrid" class="grid"></div>
+          </div>
+          <div>
+            <div class="badge-row">
+              <div class="badge">Lucky stars: <strong id="euroStarCount">0</strong>/2</div>
+            </div>
+            <div id="euroStarGrid" class="grid star-grid"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="message" class="message"></div>
+
+      <div class="two-col">
+        <div class="selected-box">
+          <div>Current selection:</div>
+          <div id="selectedList" class="selected-list">None</div>
+        </div>
+        <div class="selected-box">
+          <div>Saved rows for you:</div>
+          <div id="savedRowCount" class="selected-list">0</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="action" id="saveRowBtn">Save current row</button>
+        <button class="action secondary" id="clearCurrentBtn">Clear current selection</button>
+        <button class="action secondary" id="loadBtn">Load saved data</button>
+      </div>
+
+      <div class="panel">
+        <h2>Your saved rows</h2>
+        <div id="myRows" class="rows-list"></div>
+      </div>
+
+      <div class="panel">
+        <h2>All players</h2>
+        <div id="playersPanels" class="players-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
