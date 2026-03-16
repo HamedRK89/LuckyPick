@@ -89,7 +89,7 @@ const GAME_CONFIG = {
         hasStars: false
     },
     eurojackpot: {
-        name: "EuroJackpot",
+        name: "eurojackpot",
         maxMain: 5,
         mainRange: 50,
         hasStars: true,
