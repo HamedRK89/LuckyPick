@@ -58,7 +58,7 @@ const logoutBtn = document.getElementById("logoutBtn");
 const changeGameBtn = document.getElementById("changeGameBtn");
 
 const lottoSection = document.getElementById("lottoSection");
-const eurojackpotSection = document.getElementById("euromillionsSection");
+const eurojackpotSection = document.getElementById("eurojackpotSection");
 
 const numberGrid = document.getElementById("numberGrid");
 const euroMainGrid = document.getElementById("euroMainGrid");
@@ -88,8 +88,8 @@ const GAME_CONFIG = {
         mainRange: 45,
         hasStars: false
     },
-    euromillions: {
-        name: "EuroMillions",
+    eurojackpot: {
+        name: "EuroJackpot",
         maxMain: 5,
         mainRange: 50,
         hasStars: true,
@@ -164,7 +164,7 @@ function isSelectionComplete() {
         return currentSelection.main.length === config.maxMain;
     }
 
-    if (currentGame === "euromillions") {
+    if (currentGame === "eurojackpot") {
         return (
             currentSelection.main.length === config.maxMain &&
             currentSelection.stars.length === config.maxStars
@@ -358,7 +358,7 @@ function renderCurrentGameGrid() {
     if (currentGame === "lotto") {
         renderGrid(numberGrid, config.mainRange, currentSelection.main, toggleMainNumber, "selected");
         countEl.textContent = currentSelection.main.length;
-    } else if (currentGame === "euromillions") {
+    } else if (currentGame === "eurojackpot") {
         renderGrid(euroMainGrid, config.mainRange, currentSelection.main, toggleMainNumber, "selected");
         renderGrid(euroStarGrid, config.starRange, currentSelection.stars, toggleStarNumber, "star-selected");
         euroMainCountEl.textContent = currentSelection.main.length;
@@ -386,7 +386,7 @@ async function saveCurrentRow() {
         game: currentGame,
         gameLabel: GAME_CONFIG[currentGame].name,
         numbers: [...currentSelection.main],
-        stars: currentGame === "euromillions" ? [...currentSelection.stars] : [],
+        stars: currentGame === "eurojackpot" ? [...currentSelection.stars] : [],
         updatedAt: serverTimestamp()
     };
 
@@ -636,7 +636,7 @@ function renderGamePage() {
     pageTitle.textContent = `${config.name} Picker`;
 
     lottoSection.classList.toggle("hidden", currentGame !== "lotto");
-    euromillionsSection.classList.toggle("hidden", currentGame !== "euromillions");
+    eurojackpotSection.classList.toggle("hidden", currentGame !== "eurojackpot");
 
     renderCurrentGameGrid();
     updateSelectionSummary();
