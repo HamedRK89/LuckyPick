@@ -58,7 +58,7 @@ const logoutBtn = document.getElementById("logoutBtn");
 const changeGameBtn = document.getElementById("changeGameBtn");
 
 const lottoSection = document.getElementById("lottoSection");
-const euromillionsSection = document.getElementById("euromillionsSection");
+const eurojackpotSection = document.getElementById("euromillionsSection");
 
 const numberGrid = document.getElementById("numberGrid");
 const euroMainGrid = document.getElementById("euroMainGrid");
